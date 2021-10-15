@@ -13,9 +13,11 @@ _Nota_ : la instalación de la maquina iaas será aplicada a un sistema operativ
 ### [4. Configuración de GitPrompt](#gitPrompt)
 ### [5. Git Aliases](#gitAliases)
 ### [6. Instalación de hub](#hub)
-### [7. Instalación de RVM y Ruby]()
-### [8.]()
-### [9.]()
+### [7. Instalación de nvm y extensiones](#nvm)
+### [8. Instalación de rvm](#rvm)
+### [9. Instalación de NERDTree](#nerdtree)
+### [10. Instalación de Express](#express)
+
 
 <a name = "introdución"><a>
 ## 1. Introdución
@@ -104,11 +106,53 @@ Hub se puede utilizar en diversas maneras como por ejemplo clonar un repositorio
 
 `hub-clone`
 
-<a name = ""><a>
-## 7.
+<a name = "nvm"><a>
+## 7. Instalación de nvm y extensiones
+
+El `nvm` es un administrador de versiones: el acronomo significa **Node Version Manager** y como el nombre sugiere es una herramienta para controlar y cambiar los nodos del repositorio.
+
+Para instalar `nvm` usamos el siguiente codigo:
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+```
+
+![Install nvm](./Imagenes/ImgNvm.jpg)
+
+Es luego necesario poner la línea de codigo:
+
+`source ~/.nvm/nvm.sh`
+
+Instalamos ahora la última versión de Node a través de la escritura `nvm install --lts`.
+
+Instalamos ahora la extención de `nodeJs` a través de `npm install -g jshint`. nodeJs es una aplicación para detectar errores en el funcionamiento de código JavaScript.
+
+![Install nodeJs](./Imagenes/ImgNodeJs.jpg)
+
+Se sigue instalando `ExpressJs` ejecutando `npm install express-generator -g`. 
+
+
+<a name = "rvm"><a>
+## 8. Instalación de rvm
+
+`rvm` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Sobre el sistema operativo de Windows se utiliza el siguiente codigo  `\curl -sSL https://get.rvm.io | bash`.
+
+
+![Install rvm](./Imagenes/ImgRvm.jpg)
+
+
+<a name = "nerdtree"><a>
+## 9. Instalación de NERDTree
+
+`NERDTree` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para 
+
+
+<a name = "express"><a>
+## 10. Instalación de Express
+
 
 <a name = ""><a>
-## 8.
+## 11.
 
-<a name = ""><a>
-## 9.
+
+
