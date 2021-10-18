@@ -29,34 +29,40 @@ La infraestructura como servicio (IaaS) es un método para ofrecer funcionalidad
 <a name = "homebrew"><a>
 ## 2. Instalación de homebrew
 
-Para instalar [Homebrew](https://docs.brew.sh/Installation#untar-anywhere) sobre una maquina que utiliza el sistema operativo Windows 10 se utiliza el siguiente codigo sobre la maquina virtual.
+Para instalar [**Homebrew**](https://brew.sh/index_es) se utiliza el siguiente codigo sobre la maquina virtual.
 
 ```
-mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-
+Ejecutando este codigo será posible instalar homebrew sobre la maquina de iaas.
 
 <a name = "git"><a>
 ## 3. Instalación de git
 
-Para descargar la aplicación de git sobre un sistema operativo Windows 10 es necesario seguir las indicaciones que hay sobre el [sitio oficiál de git](http://git-scm.com/download/win).
+Para descargar la aplicación de git sobre la maquina virtual se ejecuta el codigo `sudo apt install git` y para comprobar la versión currente del git se utiliza `git --version`.
 
-![Git Install](./Imagenes/ImgGitInstall1.png))
+![Install git](./Imagenes/Img1.jpg)
 
-Siguiendo las instrucciones de git se seguirá instalando la aplicación de git sobre la maquina y luego se podrá sincronizar la aplicación con la cuenta creada sobre [GitHub](https://github.com/).
+Luego se configura el usuario sobr ela maquina virtuál como sigue:
+```
+git config --global user.name "Laura Manzini"
+git config --global user.mail "232566@studenti.unimore.it"
+```
+![Configuración usuario git](./Imagenes/Img2.jpg)
 
-Al final sobre git aparecerá como sigue:
+Es necesario crear una clave de ssh para acceder a su proprio perfil de git.
 
-![Git Hub Desktop](./Imagenes/ImgGitHubDesktop.jpg)
+Creando una *clave ssh* (se utiliza un Secure Shell Protocol) sobre GitHub se puede proteger la cuenta de GitHub cuando se esa se utiliza sobre network inseguro. Para más informaciónes se consulte la [guía de GitHub a el utilizo de la clave ssh](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
- Se puede ver como la aplicación se sincronizó correctamente sobre la maquina y al mismo tempo el la cuenta del usuario ya está sincronizada a la maquina.
+```
+ssh-keygen -t rsa -b 4096 -C  "232566@studenti.unimore.it"
 
-Utilizando la aplicación de **Git Bash** que GitHub Desktop instaló se puede acceder al terminal a través de lo que se puede comprobar la version corrente de git instalada sobre la maquina.
+```
 
- ![GitVersion](./Imagenes/GitInstall2)
+!!! non funziona
 
-
+!!NON FATTO
 <a name = "gitPrompt"><a>
 ## 4. Configuración de GitPrompt
 
@@ -76,6 +82,7 @@ A través del comando `PS1: PS1="\$(git branch 2>/dev/null | sed -n 's/* \(.*\)/
 
 ![SetUp4](./Imagenes/ImgSetUp4.jpg)
 
+!!FATTO
 <a name = "gitAliases"><a>
 ## 5. Configuración de Git Aliases
 
@@ -89,6 +96,7 @@ git config --global alias.st status
 
 Con este codigo indicamos que en vez de utilizar el comando `status` solo podemos escirbir `st`.
 
+
 <a name = "hub"><a>
 ## 6. Instalación de hub
 
@@ -96,7 +104,7 @@ El `hub` es un comando que puede facilitar el utilizo de git añadendo funcional
 
 Para descargar hub sobre un sistema operativo Windows es necesario en primer lugar descargar **Scoop** a través de PowerShell.
 
-![Download Scoop](./Imagenes/ImgScoop.jpg)
+![Download Scoop](
 
 En un segundo momento sobre Git Bash se puede descargar hub.
 
@@ -106,6 +114,7 @@ Hub se puede utilizar en diversas maneras como por ejemplo clonar un repositorio
 
 `hub-clone`
 
+!! FATTO
 <a name = "nvm"><a>
 ## 7. Instalación de nvm y extensiones
 
@@ -114,41 +123,74 @@ El `nvm` es un administrador de versiones: el acronomo significa **Node Version 
 Para instalar `nvm` usamos el siguiente codigo:
 
 ```
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-```
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+``` 
+!!FATTO
+![Install nvm](./Imagenes/Img5_nvm.jpg)
 
-![Install nvm](./Imagenes/ImgNvm.jpg)
+Instalamos ahora la extención de `**nodeJs**` a través de `sudo apt install nodejs`. 
+El nodeJs es una herramienta para detectar errores en el funcionamiento de código JavaScript.
 
-Es luego necesario poner la línea de codigo:
+![Install nodeJs](./Imagenes/Img6_nodejs.jpg)
 
-`source ~/.nvm/nvm.sh`
+Si comprueba la version currente de nodejs instalada a través de `node --version`
 
-Instalamos ahora la última versión de Node a través de la escritura `nvm install --lts`.
+![Node version](./Imagenes/Img6_nodejs_version.jpg)
 
-Instalamos ahora la extención de `nodeJs` a través de `npm install -g jshint`. nodeJs es una aplicación para detectar errores en el funcionamiento de código JavaScript.
+Se sigue instalando `**ExpressJs**` ejecutando `sudo apt install npm` y comprobamos la versión instalada a través de `npm --version`
 
-![Install nodeJs](./Imagenes/ImgNodeJs.jpg)
-
-Se sigue instalando `ExpressJs` ejecutando `npm install express-generator -g`. 
+![npm version](Img7_npm_version.jpg)
 
 
+!!FATTO
 <a name = "rvm"><a>
 ## 8. Instalación de rvm
 
-`rvm` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Sobre el sistema operativo de Windows se utiliza el siguiente codigo  `\curl -sSL https://get.rvm.io | bash`.
+`**rvm**` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Para instalar rvm se ejecuta  `sudo apt-get install software-properties-common`.
 
+Sucesivamente se instala el paquete de instalación de RVM:
 
-![Install rvm](./Imagenes/ImgRvm.jpg)
+```
+sudo apt-add-repository -y ppa:rael-gc/rvm
+sudo apt-get update
+sudo apt-get install rvm
+```
+Para instalar en modo correcto rvm es necesario se deje el aceso a los usuario que utilizar la herramienta:
 
+`sudo usermod -a -G rvm $laura`
+
+Se reinicia la maquina y se consigue que rvm fue instalado con éxito ejecutando `rvm --version`.
+
+![rvm version](./Imagenes/Img8_rvm_version.jpg)
+
+Luego se procede a instalar `**ruby**` a través de rvm:
+
+```
+rvm user gemsets
+rvm install ruby
+```
+
+![ruby version](./Imagenes/Img9_ruby_version.jpg)
 
 <a name = "nerdtree"><a>
 ## 9. Instalación de NERDTree
 
-`NERDTree` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para 
+`NERDTree` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para obtener más información sobre cómo instalar la herramiente seguir el siguiente [enlace](https://github.com/preservim/nerdtree).
 
+Para instalar NERDTree es necesario verificar si disponemos de VIM 8.0 o una versión superior:
+
+![vim version](./Imagenes/Img10_vim_version.jpg)
+
+Una vez que hemos combrobado este si puede seguir ejecutando el seguiente codigo sobre la maquina virtual:
+
+```
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
+```
 
 <a name = "express"><a>
 ## 10. Instalación de Express
+Express es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
 
 
 <a name = ""><a>
