@@ -31,9 +31,7 @@ La infraestructura como servicio (IaaS) es un método para ofrecer funcionalidad
 
 Para instalar [**Homebrew**](https://brew.sh/index_es) se utiliza el siguiente codigo sobre la maquina virtual.
 
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 Ejecutando este codigo será posible instalar homebrew sobre la maquina de iaas.
 
@@ -45,44 +43,49 @@ Para descargar la aplicación de git sobre la maquina virtual se ejecuta el codi
 ![Install git](./Imagenes/Img1.jpg)
 
 Luego se configura el usuario sobr ela maquina virtuál como sigue:
+
 ```
 git config --global user.name "Laura Manzini"
 git config --global user.mail "232566@studenti.unimore.it"
 ```
+
 ![Configuración usuario git](./Imagenes/Img2.jpg)
 
 Es necesario crear una clave de ssh para acceder a su proprio perfil de git.
 
 Creando una *clave ssh* (se utiliza un Secure Shell Protocol) sobre GitHub se puede proteger la cuenta de GitHub cuando se esa se utiliza sobre network inseguro. Para más informaciónes se consulte la [guía de GitHub a el utilizo de la clave ssh](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
 
-```
-ssh-keygen -t rsa -b 4096 -C  "232566@studenti.unimore.it"
+`ssh-keygen -t rsa -b 4096 -C  "232566@studenti.unimore.it"`
+
+![Request ssh](./Imagenes/Img3_ssh_request.jpg)
+
+Ahora es posible acceder a la llave privada que es guardada nel file *.pub*. Para accedere a este fichero utilizamos el comando `cat`.
 
 ```
+cd ~/.ssh
+cat id_ed25519.pub
+```
+Una vez que obtenimos nuestra llave publica podemos copiarla y incolarla sobre la pagína dedicata a las llave ssh en GitHub.
 
-!!! non funziona
+![GitHub ssh](./Imagenes/Img3_ssh.jpg)
 
-!!NON FATTO
 <a name = "gitPrompt"><a>
 ## 4. Configuración de GitPrompt
 
-El siguiente paso es hacer la configuración de GitPrompt. Para hacer este es necesario seguir [las instrucciones](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) que git ofrece.
+El siguiente paso es hacer la configuración de GitPrompt. Para hacer este es necesario seguir [las instrucciones](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) que git ofrece. 
 
-En primero podemos crear un repositorio en nuestra maquina  como se muestra a continuación
+Los comandos que necesitamos para pasar de un ambient bash a un ambiente zsh sono los siguientes:
 
-![SetUp1](./Imagenes/ImgSetUp1.jpg)
+```
+#Bash: 
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+```
 
-![SetUp2](./Imagenes/ImgSetUp2.jpg)
+```
+#ZSH:  
+setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+```
 
-A través del comando `git init` inicializiamos el repositorio a git y luego podemos ver como este repositorio va a ser el **master node**.
-
-![SetUp3](./Imagenes/ImgSetUp3.jpg)
-
-A través del comando `PS1: PS1="\$(git branch 2>/dev/null | sed -n 's/* \(.*\)/\1 /p')$ "` podemos enseñar el branch en lo que estamos trabajando.
-
-![SetUp4](./Imagenes/ImgSetUp4.jpg)
-
-!!FATTO
 <a name = "gitAliases"><a>
 ## 5. Configuración de Git Aliases
 
@@ -90,9 +93,7 @@ En GitHub puede ser muy util la creación de _aliases_. Un alias es una **schort
 
 Se pueden configurar todos los alias que el usuario quiere po ejemplo 
 
-```
-git config --global alias.st status
-```
+`git config --global alias.st status`
 
 Con este codigo indicamos que en vez de utilizar el comando `status` solo podemos escirbir `st`.
 
@@ -100,32 +101,19 @@ Con este codigo indicamos que en vez de utilizar el comando `status` solo podemo
 <a name = "hub"><a>
 ## 6. Instalación de hub
 
-El `hub` es un comando que puede facilitar el utilizo de git añadendo funcionalidades.
+El `hub` es un comando que puede facilitar el utilizo de git añadendo funcionalidades. El comando se instala ejecutando `sudo apt install hub` y una vez que la instalación será completada comprobamos la versión actual a través de `hub --version`.
 
-Para descargar hub sobre un sistema operativo Windows es necesario en primer lugar descargar **Scoop** a través de PowerShell.
+![hub version](./Imagenes/Img4_hub.jpg)
 
-![Download Scoop](
-
-En un segundo momento sobre Git Bash se puede descargar hub.
-
-![Download hub](./Imagenes/ImgHub.jpg)
-
-Hub se puede utilizar en diversas maneras como por ejemplo clonar un repositorio con el siguiente comando:
-
-`hub-clone`
-
-!! FATTO
 <a name = "nvm"><a>
 ## 7. Instalación de nvm y extensiones
 
-El `nvm` es un administrador de versiones: el acronomo significa **Node Version Manager** y como el nombre sugiere es una herramienta para controlar y cambiar los nodos del repositorio.
+El `**nvm**` es un administrador de versiones: el acronomo significa **Node Version Manager** y como el nombre sugiere es una herramienta para controlar y cambiar los nodos del repositorio.
 
-Para instalar `nvm` usamos el siguiente codigo:
+Para instalar nvm usamos el siguiente codigo:
 
-```
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-``` 
-!!FATTO
+` wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash `
+
 ![Install nvm](./Imagenes/Img5_nvm.jpg)
 
 Instalamos ahora la extención de `**nodeJs**` a través de `sudo apt install nodejs`. 
@@ -141,14 +129,12 @@ Se sigue instalando `**ExpressJs**` ejecutando `sudo apt install npm` y comproba
 
 ![npm version](Img7_npm_version.jpg)
 
-
-!!FATTO
 <a name = "rvm"><a>
 ## 8. Instalación de rvm
 
 `**rvm**` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Para instalar rvm se ejecuta  `sudo apt-get install software-properties-common`.
 
-Sucesivamente se instala el paquete de instalación de RVM:
+Sucesivamente se instala el paquete de instalación de rvm:
 
 ```
 sudo apt-add-repository -y ppa:rael-gc/rvm
@@ -175,7 +161,7 @@ rvm install ruby
 <a name = "nerdtree"><a>
 ## 9. Instalación de NERDTree
 
-`NERDTree` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para obtener más información sobre cómo instalar la herramiente seguir el siguiente [enlace](https://github.com/preservim/nerdtree).
+`**NERDTree**` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para obtener más información sobre cómo instalar la herramiente seguir el siguiente [enlace](https://github.com/preservim/nerdtree).
 
 Para instalar NERDTree es necesario verificar si disponemos de VIM 8.0 o una versión superior:
 
@@ -190,7 +176,7 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 <a name = "express"><a>
 ## 10. Instalación de Express
-Express es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
+`**Express**` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
 
 
 <a name = ""><a>
