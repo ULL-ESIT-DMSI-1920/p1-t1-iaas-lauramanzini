@@ -29,7 +29,7 @@ La infraestructura como servicio (IaaS) es un método para ofrecer funcionalidad
 <a name = "homebrew"><a>
 ## 2. Instalación de homebrew
 
-Para instalar [**Homebrew**](https://brew.sh/index_es) se utiliza el siguiente codigo sobre la maquina virtual.
+Para instalar [Homebrew](https://brew.sh/index_es) se utiliza el siguiente codigo sobre la maquina virtual.
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
@@ -108,7 +108,7 @@ El `hub` es un comando que puede facilitar el utilizo de git añadendo funcional
 <a name = "nvm"><a>
 ## 7. Instalación de nvm y extensiones
 
-El `**nvm**` es un administrador de versiones: el acronomo significa **Node Version Manager** y como el nombre sugiere es una herramienta para controlar y cambiar los nodos del repositorio.
+El `nvm` es un administrador de versiones: el acronomo significa **Node Version Manager** y como el nombre sugiere es una herramienta para controlar y cambiar los nodos del repositorio.
 
 Para instalar nvm usamos el siguiente codigo:
 
@@ -116,7 +116,7 @@ Para instalar nvm usamos el siguiente codigo:
 
 ![Install nvm](./Imagenes/Img5_nvm.jpg)
 
-Instalamos ahora la extención de `**nodeJs**` a través de `sudo apt install nodejs`. 
+Instalamos ahora la extención de `nodeJs` a través de `sudo apt install nodejs`. 
 El nodeJs es una herramienta para detectar errores en el funcionamiento de código JavaScript.
 
 ![Install nodeJs](./Imagenes/Img6_nodejs.jpg)
@@ -125,7 +125,7 @@ Si comprueba la version currente de nodejs instalada a través de `node --versio
 
 ![Node version](./Imagenes/Img6_nodejs_version.jpg)
 
-Se sigue instalando `**ExpressJs**` ejecutando `sudo apt install npm` y comprobamos la versión instalada a través de `npm --version`
+Se sigue instalando `ExpressJs` ejecutando `sudo apt install npm` y comprobamos la versión instalada a través de `npm --version`
 
 ![npm version](Img7_npm_version.jpg)
 
@@ -149,7 +149,7 @@ Se reinicia la maquina y se consigue que rvm fue instalado con éxito ejecutando
 
 ![rvm version](./Imagenes/Img8_rvm_version.jpg)
 
-Luego se procede a instalar `**ruby**` a través de rvm:
+Luego se procede a instalar `ruby` a través de rvm:
 
 ```
 rvm user gemsets
@@ -161,7 +161,7 @@ rvm install ruby
 <a name = "nerdtree"><a>
 ## 9. Instalación de NERDTree
 
-`**NERDTree**` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para obtener más información sobre cómo instalar la herramiente seguir el siguiente [enlace](https://github.com/preservim/nerdtree).
+`NERDTree` es un gestor de archivios que permite de navigar sobre diferentes ficheros. Para obtener más información sobre cómo instalar la herramiente seguir el siguiente [enlace](https://github.com/preservim/nerdtree).
 
 Para instalar NERDTree es necesario verificar si disponemos de VIM 8.0 o una versión superior:
 
@@ -177,10 +177,6 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 <a name = "express"><a>
 ## 10. Instalación de Express
 `**Express**` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
-
-
-<a name = ""><a>
-## 11.
 
 
 
