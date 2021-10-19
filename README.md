@@ -132,7 +132,7 @@ Se sigue instalando `ExpressJs` ejecutando `sudo apt install npm` y comprobamos 
 <a name = "rvm"><a>
 ## 8. Instalación de rvm
 
-`**rvm**` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Para instalar rvm se ejecuta  `sudo apt-get install software-properties-common`.
+`rvm` es un comando para instalar y modificar el trabjo hecho en el entorno de ruby. Para instalar rvm se ejecuta  `sudo apt-get install software-properties-common`.
 
 Sucesivamente se instala el paquete de instalación de rvm:
 
@@ -176,7 +176,7 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 <a name = "express"><a>
 ## 10. Instalación de Express
-`**Express**` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
+`Express` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
 
 
 
