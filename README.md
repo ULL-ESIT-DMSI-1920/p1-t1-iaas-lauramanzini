@@ -7,16 +7,16 @@ Estudiante **Laura Manzini**
 _Nota_ : la instalación de la maquina iaas será aplicada a un sistema operativo Windows 10
 
 # Indice
-### [1. Introdución](#introdución)
-### [2. Instalación de homebrew](#homebrew)
-### [3. Instalación de git](#git)
-### [4. Configuración de GitPrompt](#gitPrompt)
-### [5. Git Aliases](#gitAliases)
-### [6. Instalación de hub](#hub)
-### [7. Instalación de nvm y extensiones](#nvm)
-### [8. Instalación de rvm](#rvm)
-### [9. Instalación de NERDTree](#nerdtree)
-### [10. Instalación de Express](#express)
+1. [Introdución](#introdución)
+2. [Instalación de homebrew](#homebrew)
+3. [Instalación de git](#git)
+4. [Configuración de GitPrompt](#gitPrompt)
+5. [Git Aliases](#gitAliases)
+6. [Instalación de hub](#hub)
+7. [Instalación de nvm y extensiones](#nvm)
+8. [Instalación de rvm](#rvm)
+9. [Instalación de NERDTree](#nerdtree)
+10. [Instalación de Express](#express)
 
 
 <a name = "introdución"><a>
