@@ -176,7 +176,41 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 
 <a name = "express"><a>
 ## 10. Instalación de Express
-`Express` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de Node.js.
+`Express` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de node.js. La [documentación](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction) de Express explica como se crear un web server.
 
+En primero creamos un fichero que vamos a llamar `test- node`.
 
+```
+mkdir test-node
+cd test-node
+```
+
+Luego creamos un documento que llamaremos `hello.js`.
+
+`touch hello.js`
+
+Escribemos entre este documento el siguiente codigo donde ponemos el IP de nuestra maquina y 
+
+```
+// Load HTTP module
+const http = require("http");
+
+const hostname = "10.6.129.20";
+const port = 80;
+
+// Create HTTP server
+const server = http.createServer(function(req, res) {
+
+   // Set the response HTTP header with HTTP status and Content type
+   res.writeHead(200, {'Content-Type': 'text/plain'});
+
+   // Send the response body "Hello World"
+   res.end('Hello World\n');
+});
+
+// Prints a log once the server starts listening
+server.listen(port, hostname, function() {
+   console.log(`Server running at http://${hostname}:${port}/`);
+})
+```
 
