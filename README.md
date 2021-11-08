@@ -65,7 +65,7 @@ Ahora es posible acceder a la llave privada que es guardada nel file *.pub*. Par
 cd ~/.ssh
 cat id_ed25519.pub
 ```
-Una vez que obtenimos nuestra llave publica podemos copiarla y incolarla sobre la pagína dedicata a las llave ssh en GitHub.
+Una vez que obtenimos nuestra llave publica podemos copiarla y pegarla sobre la pagína dedicata a las llave ssh en GitHub.
 
 ![GitHub ssh](./Imagenes/Img3_ssh.jpg)
 
@@ -76,13 +76,15 @@ El siguiente paso es hacer la configuración de GitPrompt. Para hacer este es ne
 
 Los comandos que necesitamos para pasar de un ambient bash a un ambiente zsh sono los siguientes:
 
+En la bash:
+
 ```
-#Bash: 
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 ```
 
+En la zsh:
+
 ```
-#ZSH:  
 setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
 ```
 
@@ -127,7 +129,7 @@ Si comprueba la version currente de nodejs instalada a través de `node --versio
 
 Se sigue instalando `ExpressJs` ejecutando `sudo apt install npm` y comprobamos la versión instalada a través de `npm --version`
 
-![npm version](Img7_npm_version.jpg)
+![npm version](./Imagenes/Img7_npm_version.jpg)
 
 <a name = "rvm"><a>
 ## 8. Instalación de rvm
@@ -178,25 +180,22 @@ vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ## 10. Instalación de Express
 `Express` es un *web framework*, escrito en JavaScript y alojado en el entorno de ejecución de node.js. La [documentación](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/Introduction) de Express explica como se crear un web server.
 
-En primero creamos un fichero que vamos a llamar `test- node`.
+En primero creamos un fichero que vamos a llamar `test-node` y creamos un fichero `ciao.js`:
 
 ```
 mkdir test-node
 cd test-node
+ciao.js
 ```
 
-Luego creamos un documento que llamaremos `hello.js`.
-
-`touch hello.js`
-
-Escribemos entre este documento el siguiente codigo donde ponemos el IP de nuestra maquina y 
+A través de la aplicación vim para una terminal de Ubuntu escribemos lo que sigue en el fichero `ciao.js`:
 
 ```
 // Load HTTP module
 const http = require("http");
 
 const hostname = "10.6.129.20";
-const port = 80;
+const port = 8000;
 
 // Create HTTP server
 const server = http.createServer(function(req, res) {
@@ -213,4 +212,7 @@ server.listen(port, hostname, function() {
    console.log(`Server running at http://${hostname}:${port}/`);
 })
 ```
-!!! è la scrittura giusta 'echo ".."< ciao.js ??? da controllare
+
+En final ejecutamos el código `node ciao.js` para ejecutar el fichero con Node.
+
+![Express](./Imagenes/Img11_express_nodes.jpg)
